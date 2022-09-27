@@ -24,6 +24,10 @@ class CreateBlVehiculosTable extends Migration
             $table->string('serial c');
             $table->integer('empleado_id');
             $table->timestamps();
+
+            $table->foreign('empleado_id')->references('id')->on('bl_empleados')
+            ->onUpdate('cascade')
+            ->onDelete('cascade');
         });
     }
 
