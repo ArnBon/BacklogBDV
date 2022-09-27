@@ -32,6 +32,15 @@ class CreateBlBitacorasTable extends Migration
             $table->string('num_ctrol_com_produccion');
             $table->enum('estado',['Seleccione','asignado','cerrado','en certificacion','en desarrollo','en produccion','por iniciar','suspendido'])->default('Seleccione');
             $table->timestamps();
+
+            $table->foreign('solicitud_id')->references('id')->on('bl_solicitudes')
+            ->onUpdate('cascade')
+            ->onDelete('cascade');
+
+            $table->foreign('empleado_id')->references('id')->on('bl_empleados')
+            ->onUpdate('cascade')
+            ->onDelete('cascade');
+
         });
     }
 
