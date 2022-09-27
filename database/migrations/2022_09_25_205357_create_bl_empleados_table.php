@@ -27,6 +27,18 @@ class CreateBlEmpleadosTable extends Migration
             $table->integer('ubicacion_id');
             $table->integer('persona_id');
             $table->timestamps();
+
+            $table->foreign('cargo_id')->references('id')->on('bl_cargos')
+            ->onUpdate('cascade')
+            ->onDelete('cascade');
+
+            $table->foreign('persona_id')->references('id')->on('bl_personas')
+            ->onUpdate('cascade')
+            ->onDelete('cascade');
+
+            $table->foreign('ubicacion_id')->references('id')->on('bl_ubicaciones')
+            ->onUpdate('cascade')
+            ->onDelete('cascade');
         });
     }
 
