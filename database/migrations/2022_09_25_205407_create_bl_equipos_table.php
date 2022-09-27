@@ -18,6 +18,10 @@ class CreateBlEquiposTable extends Migration
             $table->string('descripcion');
             $table->enum('situacion',['Remoto','En sitio']);
             $table->timestamps();
+
+            $table->foreign('empleado_id')->references('id')->on('bl_empleados')
+            ->onUpdate('cascade')
+            ->onDelete('cascade');
         });
     }
 
