@@ -18,6 +18,10 @@ class CreateBlGenerosTable extends Migration
             $table->enum('descripcion', ['M','F']);
             $table->integer('persona_id');
             $table->timestamps();
+
+            $table->foreign('persona_id')->references('id')->on('bl_personas')
+            ->onUpdate('cascade')
+            ->onDelete('cascade');
         });
     }
 
