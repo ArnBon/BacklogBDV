@@ -15,10 +15,10 @@ class CreateBlSolicitudesTable extends Migration
     {
         Schema::create('bl_solicitudes', function (Blueprint $table) {
             $table->id();
-            $table->varchar('tipo_solicitud');
-            $table->varchar('cod_solicitud');
-            $table->varchar('solicitante');
-            $table->varchar('area_solicitante');
+            $table->string('tipo_solicitud');
+            $table->string('cod_solicitud');
+            $table->string('solicitante');
+            $table->string('area_solicitante');
             $table->date('fec_solicitud');
             $table->timestamps();
         });

@@ -15,8 +15,8 @@ class CreateBlEmpleadosFamiliaresTable extends Migration
     {
         Schema::create('bl_empleados_familiares', function (Blueprint $table) {
             $table->id();
-            $table->int('empleado_id');
-            $table->int('familiar_id');
+            $table->integer('empleado_id');
+            $table->integer('familiar_id');
             $table->timestamps();
         });
     }

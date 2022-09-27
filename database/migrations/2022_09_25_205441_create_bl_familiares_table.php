@@ -15,11 +15,11 @@ class CreateBlFamiliaresTable extends Migration
     {
         Schema::create('bl_familiares', function (Blueprint $table) {
             $table->id();
-            $table->varchar('parentesco');
-            $table->varchar('grupo_sanguineo');
-            $table->varchar('discapacidad');
-            $table->varchar('patologia');
-            $table->varchar('medicamento_especial');
+            $table->string('parentesco');
+            $table->string('grupo_sanguineo');
+            $table->string('discapacidad');
+            $table->string('patologia');
+            $table->string('medicamento_especial');
             $table->timestamps();
         });
     }

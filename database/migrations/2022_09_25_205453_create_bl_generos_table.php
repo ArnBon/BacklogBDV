@@ -15,6 +15,8 @@ class CreateBlGenerosTable extends Migration
     {
         Schema::create('bl_generos', function (Blueprint $table) {
             $table->id();
+            $table->enum('descripcion', ['M','F']);
+            $table->integer('persona_id');
             $table->timestamps();
         });
     }

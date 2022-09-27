@@ -15,7 +15,7 @@ class CreateBlEstadosTable extends Migration
     {
         Schema::create('bl_estados', function (Blueprint $table) {
             $table->id();
-            $table->varchar('descripcion');
+            $table->string('descripcion');
             $table->timestamps();
         });
     }

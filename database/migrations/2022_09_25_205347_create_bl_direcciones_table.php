@@ -15,29 +15,29 @@ class CreateBlDireccionesTable extends Migration
     {
         Schema::create('bl_direcciones', function (Blueprint $table) {
             $table->id();
-            $table->varchar('descripcion');
-            $table->varchar('avenida');
-            $table->varchar('calle');
-            $table->varchar('punto_ref');
-            $table->int('ciudad_id');
-            $table->int('estado_id');
-            $table->int('parroquia_id');
-            $table->int('municipio_id');
+            $table->string('descripcion');
+            $table->string('avenida');
+            $table->string('calle');
+            $table->string('punto_ref');
+            $table->unsignedBigInteger('ciudad_id');
+            $table->unsignedBigInteger('estado_id');
+            $table->unsignedBigInteger('parroquia_id');
+            $table->unsignedBigInteger('municipio_id');
             $table->timestamps();
 
-            $table->foreign('ciudad_id')->references('id')->ON('bl_ciudades')
+            $table->foreign('ciudad_id')->references('id')->on('bl_ciudades')
+                  ->onUpdate ('cascade')
+                  ->onDelete ('cascade');            
+
+            $table->foreign('parroquia_id')->references('id')->on('bl_parroquias')
                   ->onUpdate ('cascade')
                   ->onDelete ('cascade');
 
-            $table->foreign('estado_id')->references('id')->ON('bl_estados')
+            $table->foreign('municipio_id')->references('id')->on('bl_municipios')
                   ->onUpdate ('cascade')
                   ->onDelete ('cascade');
 
-            $table->foreign('parroquia_id')->references('id')->ON('bl_parroquias')
-                  ->onUpdate ('cascade')
-                  ->onDelete ('cascade');
-
-            $table->foreign('municipio_id')->references('id')->ON('bl_municipios')
+            $table->foreign('estado_id')->references('id')->on('bl_estados')
                   ->onUpdate ('cascade')
                   ->onDelete ('cascade');
         });

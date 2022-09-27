@@ -15,7 +15,7 @@ class CreateBlCargosTable extends Migration
     {
         Schema::create('bl_cargos', function (Blueprint $table) {
             $table->id();
-            $table->varchar('descripcion');
+            $table->string('descripcion');
             $table->timestamps();
         });
     }

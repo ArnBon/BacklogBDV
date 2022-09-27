@@ -15,24 +15,22 @@ class CreateBlBitacorasTable extends Migration
     {
         Schema::create('bl_bitacoras', function (Blueprint $table) {
             $table->id();
-            $table->varchar('aplicativo');
-            $table->enum('normativo',['SI','NO']);
-            $table->enum('baja', 'media', 'alta');
-            $table->varchar('detalle_corto');
-            $table->varchar('detalle_seguimiento');
-            $table->varchar('esp_responsable');
-            $table->varchar('porc_avance');
-            $table->varchar('observaciones');
+            $table->string('aplicativo');
+            $table->enum('normativo',['Seleccione','SI','NO'])->default('Seleccione');
+            $table->enum('prioridad',['Seleccione','baja', 'media', 'alta'])->default('Seleccione');
+            $table->string('detalle_corto');
+            $table->string('detalle_seguimiento');
+            $table->string('esp_responsable');
+            $table->string('porc_avance');
+            $table->string('observaciones');
             $table->date('fec_inicio');
             $table->date('fec_cierre');
             $table->date('fec_suspension');
             $table->date('fec_fincalidad');
             $table->date('fec_finproduccion');
-            $table->varchar('num_ctrol_com_calidad');
-            $table->varchar('num_ctrol_com_produccion');
-            $table->enum('estado',['asignado','cerrado','en certificacion','en desarrollo','en produccion','por iniciar','suspendido']);
-
-            
+            $table->string('num_ctrol_com_calidad');
+            $table->string('num_ctrol_com_produccion');
+            $table->enum('estado',['Seleccione','asignado','cerrado','en certificacion','en desarrollo','en produccion','por iniciar','suspendido'])->default('Seleccione');
             $table->timestamps();
         });
     }

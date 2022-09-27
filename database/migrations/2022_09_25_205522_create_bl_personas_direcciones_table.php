@@ -15,6 +15,8 @@ class CreateBlPersonasDireccionesTable extends Migration
     {
         Schema::create('bl_personas_direcciones', function (Blueprint $table) {
             $table->id();
+            $table->integer('persona_id');
+            $table->integer('direccion_id');
             $table->timestamps();
         });
     }

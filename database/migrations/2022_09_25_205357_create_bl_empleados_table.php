@@ -15,17 +15,17 @@ class CreateBlEmpleadosTable extends Migration
     {
         Schema::create('bl_empleados', function (Blueprint $table) {
             $table->id();
-            $table->varchar('nm_ct');
+            $table->string('nm_ct');
             $table->date('fec_ing');
             $table->date('fec_ing_dpto');
-            $table->varchar('ant_dpto');
-            $table->varchar('ant_bco');
-            $table->varchar('email');
-            $table->varchar('email_alterno');
+            $table->string('ant_dpto');
+            $table->string('ant_bco');
+            $table->string('email');
+            $table->string('email_alterno');
             $table->enum('personal_critico', ['si','no']);
-            $table->int('cargo_id');
-            $table->int('ubicacion_id');
-            $table->int('persona_id');
+            $table->integer('cargo_id');
+            $table->integer('ubicacion_id');
+            $table->integer('persona_id');
             $table->timestamps();
         });
     }

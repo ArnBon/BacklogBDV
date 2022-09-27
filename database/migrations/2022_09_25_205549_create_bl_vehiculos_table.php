@@ -15,6 +15,14 @@ class CreateBlVehiculosTable extends Migration
     {
         Schema::create('bl_vehiculos', function (Blueprint $table) {
             $table->id();
+            $table->string('modelo');
+            $table->string('marca');
+            $table->string('color');
+            $table->string('placa');
+            $table->string('annio');
+            $table->string('serial_m');
+            $table->string('serial c');
+            $table->integer('empleado_id');
             $table->timestamps();
         });
     }

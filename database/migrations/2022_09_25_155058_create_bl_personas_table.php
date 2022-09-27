@@ -15,9 +15,9 @@ class CreateBlPersonasTable extends Migration
     {
         Schema::create('bl_personas', function (Blueprint $table) {
             $table->id();
-            $table->varchar('cedula');
-            $table->varchar('nombres');
-            $table->varchar('apellidos');
+            $table->string('cedula');
+            $table->string('nombres');
+            $table->string('apellidos');
             $table->date('fec_nac');
             $table->integer('edad');
             $table->timestamps();

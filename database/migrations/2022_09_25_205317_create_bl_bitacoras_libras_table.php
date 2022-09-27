@@ -15,8 +15,8 @@ class CreateBlBitacorasLibrasTable extends Migration
     {
         Schema::create('bl_bitacoras_libras', function (Blueprint $table) {
             $table->id();
-            $table->int('bitacora_id');
-            $table->int('libra_id');
+            $table->integer('bitacora_id');
+            $table->integer('libra_id');
             $table->timestamps();
         });
     }

@@ -15,7 +15,7 @@ class CreateBlEquiposTable extends Migration
     {
         Schema::create('bl_equipos', function (Blueprint $table) {
             $table->id();
-            $table->varchar('descripcion');
+            $table->string('descripcion');
             $table->enum('situacion',['Remoto','En sitio']);
             $table->timestamps();
         });

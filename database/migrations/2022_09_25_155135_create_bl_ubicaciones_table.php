@@ -15,12 +15,12 @@ class CreateBlUbicacionesTable extends Migration
     {
         Schema::create('bl_ubicaciones', function (Blueprint $table) {
             $table->id();
-            $table->varchar('cod_unidad');
-            $table->varchar('gerencia');
-            $table->varchar('vp');
-            $table->varchar('tipo');
-            $table->varchar('nivel');
-            $table->varchar('grupo');
+            $table->string('cod_unidad');
+            $table->string('gerencia');
+            $table->string('vp');
+            $table->string('tipo');
+            $table->string('nivel');
+            $table->string('grupo');
             $table->timestamps();
         });
     }

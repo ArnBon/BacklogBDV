@@ -15,8 +15,8 @@ class CreateBlTelefonosTable extends Migration
     {
         Schema::create('bl_telefonos', function (Blueprint $table) {
             $table->id();
-            $table->varchar('telefono');
-            $table->varchar('operadora');
+            $table->string('telefono');
+            $table->string('operadora');
             $table->timestamps();
         });
     }
