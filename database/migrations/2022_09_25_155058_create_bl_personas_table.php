@@ -21,6 +21,14 @@ class CreateBlPersonasTable extends Migration
             $table->date('fec_nac');
             $table->integer('edad');
             $table->timestamps();
+
+            $table->foreign('persona_id')->references('id')->on('bl_personas')
+            ->onUpdate('cascade')
+            ->onDelete('cascade');
+
+            $table->foreign('direccion_id')->references('id')->on('bl_direcciones')
+            ->onUpdate('cascade')
+            ->onDelete('cascade');
         });
     }
 

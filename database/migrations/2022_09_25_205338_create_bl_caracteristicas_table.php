@@ -29,6 +29,12 @@ class CreateBlCaracteristicasTable extends Migration
             $table->ENUM('bl_equipos_id', ['32','64']);
             $table->integer('equipo_id'); 
             $table->timestamps();
+
+            $table->foreign('empleado_id')->references('id')->on('bl_empleados')
+            ->onUpdate('cascade')
+            ->onDelete('cascade');
+
+            
         });
 
         

@@ -18,6 +18,14 @@ class CreateBlPersonasTelefonosTable extends Migration
              $table->integer('persona_id');
             $table->integer('telefono_id');
             $table->timestamps();
+
+            $table->foreign('persona_id')->references('id')->on('bl_personas')
+            ->onUpdate('cascade')
+            ->onDelete('cascade');
+
+            $table->foreign('telefono_id')->references('id')->on('bl_telefonos')
+            ->onUpdate('cascade')
+            ->onDelete('cascade');
         });
     }
 

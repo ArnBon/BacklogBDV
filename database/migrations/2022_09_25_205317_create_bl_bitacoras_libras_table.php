@@ -18,6 +18,14 @@ class CreateBlBitacorasLibrasTable extends Migration
             $table->integer('bitacora_id');
             $table->integer('libra_id');
             $table->timestamps();
+
+            $table->foreign('bitacora_id')->references('id')->on('bl_bitacoras')
+            ->onUpdate('cascade')
+            ->onDelete('cascade');
+
+            $table->foreign('libra_id')->references('id')->on('bl_libras')
+            ->onUpdate('cascade')
+            ->onDelete('cascade');
         });
     }
 

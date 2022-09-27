@@ -18,6 +18,14 @@ class CreateBlEmpleadosFamiliaresTable extends Migration
             $table->integer('empleado_id');
             $table->integer('familiar_id');
             $table->timestamps();
+
+            $table->foreign('empleado_id')->references('id')->on('bl_empleados')
+            ->onUpdate('cascade')
+            ->onDelete('cascade');
+
+            $table->foreign('familiar_id')->references('id')->on('bl_familiares')
+            ->onUpdate('cascade')
+            ->onDelete('cascade');
         });
     }
 
