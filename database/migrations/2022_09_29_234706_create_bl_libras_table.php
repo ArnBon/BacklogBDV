@@ -21,12 +21,12 @@ class CreateBlLibrasTable extends Migration
             $table->string('nom_aplic');
             $table->string('funcion');
             $table->string('plataforma');
-            $table->enum('tipo_cliente',['interno','externo', 'ambos','N/D']);
-            $table->enum('criticidad',['baja','media','alta']);
-            $table->enum('edo_aplic',['operativo','no operativo']);
+            $table->enum('tipo_cliente',['Seleccione...','interno','externo', 'ambos','N/D'])->default('Seleccione...');
+            $table->enum('criticidad',['Seleccione...','baja','media','alta'])->default('Seleccione...');
+            $table->enum('edo_aplic',['Seleccione...','operativo','no operativo'])->default('Seleccione...');
             $table->string('maquina');
-            $table->enum('amb_calidad',['si','no']);
-            $table->enum('fuente',['si','no']);
+            $table->enum('amb_calidad',['Seleccione...','si','no'])->default('Seleccione...');
+            $table->enum('fuente',['Seleccione...','si','no'])->default('Seleccione...');
             $table->string('observaciones');
             $table->timestamps();
         });

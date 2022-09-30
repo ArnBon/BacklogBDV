@@ -22,10 +22,10 @@ class CreateBlEmpleadosTable extends Migration
             $table->string('ant_bco');
             $table->string('email');
             $table->string('email_alterno');
-            $table->enum('personal_critico', ['si','no']);
-            $table->integer('cargo_id');
-            $table->integer('ubicacion_id');
-            $table->integer('persona_id');
+            $table->enum('personal_critico', ['Seleccione...','si','no'])->default('Seleccione...');
+            $table->unsignedBigInteger('cargo_id');
+            $table->unsignedBigInteger('ubicacion_id');
+            $table->unsignedBigInteger('persona_id');
             $table->timestamps();
 
             $table->foreign('cargo_id')->references('id')->on('bl_cargos')

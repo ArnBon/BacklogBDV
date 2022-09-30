@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateBlEmpleadosFamiliaresTable extends Migration
+class CreateBlPersonasDireccionesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,19 +13,20 @@ class CreateBlEmpleadosFamiliaresTable extends Migration
      */
     public function up()
     {
-        Schema::create('bl_empleados_familiares', function (Blueprint $table) {
+        Schema::create('bl_personas_direcciones', function (Blueprint $table) {
             $table->id();
-            $table->integer('empleado_id');
-            $table->integer('familiar_id');
+            $table->unsignedBigInteger('persona_id');
+            $table->unsignedBigInteger('direccion_id');
             $table->timestamps();
 
-            $table->foreign('empleado_id')->references('id')->on('bl_empleados')
+            $table->foreign('persona_id')->references('id')->on('bl_personas')
             ->onUpdate('cascade')
             ->onDelete('cascade');
 
-            $table->foreign('familiar_id')->references('id')->on('bl_familiares')
+            $table->foreign('direccion_id')->references('id')->on('bl_direcciones')
             ->onUpdate('cascade')
             ->onDelete('cascade');
+            
         });
     }
 
@@ -36,6 +37,6 @@ class CreateBlEmpleadosFamiliaresTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('bl_empleados_familiares');
+        Schema::dropIfExists('bl_personas_direcciones');
     }
 }

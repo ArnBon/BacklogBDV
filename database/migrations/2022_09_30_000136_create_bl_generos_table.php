@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateBlPersonasTable extends Migration
+class CreateBlGenerosTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,20 +13,13 @@ class CreateBlPersonasTable extends Migration
      */
     public function up()
     {
-        Schema::create('bl_personas', function (Blueprint $table) {
+        Schema::create('bl_generos', function (Blueprint $table) {
             $table->id();
-            $table->string('cedula');
-            $table->string('nombres');
-            $table->string('apellidos');
-            $table->date('fec_nac');
-            $table->integer('edad');
+            $table->enum('descripcion', ['Seleccione...','M','F'])->default('Seleccione...');
+            $table->unsignedBigInteger('persona_id');
             $table->timestamps();
 
             $table->foreign('persona_id')->references('id')->on('bl_personas')
-            ->onUpdate('cascade')
-            ->onDelete('cascade');
-
-            $table->foreign('direccion_id')->references('id')->on('bl_direcciones')
             ->onUpdate('cascade')
             ->onDelete('cascade');
         });
@@ -39,6 +32,6 @@ class CreateBlPersonasTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('bl_personas');
+        Schema::dropIfExists('bl_generos');
     }
 }

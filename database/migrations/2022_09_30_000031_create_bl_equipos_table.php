@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateBlGenerosTable extends Migration
+class CreateBlEquiposTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,13 +13,14 @@ class CreateBlGenerosTable extends Migration
      */
     public function up()
     {
-        Schema::create('bl_generos', function (Blueprint $table) {
+        Schema::create('bl_equipos', function (Blueprint $table) {
             $table->id();
-            $table->enum('descripcion', ['M','F']);
-            $table->integer('persona_id');
+            $table->unsignedBigInteger('empleado_id');
+            $table->string('descripcion');
+            $table->enum('situacion',['Seleccione...','Remoto','En sitio'])->default('Seleccione...');
             $table->timestamps();
 
-            $table->foreign('persona_id')->references('id')->on('bl_personas')
+            $table->foreign('empleado_id')->references('id')->on('bl_empleados')
             ->onUpdate('cascade')
             ->onDelete('cascade');
         });
@@ -32,6 +33,6 @@ class CreateBlGenerosTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('bl_generos');
+        Schema::dropIfExists('bl_equipos');
     }
 }

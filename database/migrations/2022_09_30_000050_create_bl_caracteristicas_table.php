@@ -15,6 +15,7 @@ class CreateBlCaracteristicasTable extends Migration
     {
         Schema::create('bl_caracteristicas', function (Blueprint $table) {
             $table->id();
+            $table->unsignedBigInteger('equipo_id');
             $table->string('marca'); 
             $table->string('modelo'); 
             $table->string('ip_maquina'); 
@@ -22,24 +23,16 @@ class CreateBlCaracteristicasTable extends Migration
             $table->string('so'); 
             $table->string('serial'); 
             $table->string('arquitectura'); 
-            $table->ENUM('acceso_int', ['SI', 'NO']); 
-            $table->ENUM('equipo_guardia', ['SI', 'NO']); 
+            $table->ENUM('acceso_int', ['Seleccione...','SI', 'NO'])->default('Seleccione...'); 
+            $table->ENUM('equipo_guardia', ['Seleccione...','SI', 'NO'])->default('Seleccione...'); 
             $table->string('asignado_por'); 
-            $table->ENUM('tipo_vpn_asig', ['32','64']); 
-            $table->ENUM('bl_equipos_id', ['32','64']);
-            $table->integer('equipo_id'); 
+            $table->ENUM('tipo_vpn_asig', ['Seleccione...','32','64'])->default('Seleccione...'); 
             $table->timestamps();
 
-            $table->foreign('empleado_id')->references('id')->on('bl_empleados')
+            $table->foreign('equipo_id')->references('id')->on('bl_equipos')
             ->onUpdate('cascade')
             ->onDelete('cascade');
-
-            
         });
-
-        
- 
-  
     }
 
     /**

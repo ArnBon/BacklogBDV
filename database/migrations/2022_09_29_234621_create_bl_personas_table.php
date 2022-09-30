@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateBlTelefonosTable extends Migration
+class CreateBlPersonasTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,10 +13,13 @@ class CreateBlTelefonosTable extends Migration
      */
     public function up()
     {
-        Schema::create('bl_telefonos', function (Blueprint $table) {
+        Schema::create('bl_personas', function (Blueprint $table) {
             $table->id();
-            $table->string('telefono');
-            $table->string('operadora');
+            $table->string('cedula');
+            $table->string('nombres');
+            $table->string('apellidos');
+            $table->date('fec_nac');
+            $table->integer('edad');
             $table->timestamps();
         });
     }
@@ -28,6 +31,6 @@ class CreateBlTelefonosTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('bl_telefonos');
+        Schema::dropIfExists('bl_personas');
     }
 }
