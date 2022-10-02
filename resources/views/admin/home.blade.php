@@ -24,54 +24,54 @@
 
 <form>
   <div class="form-row">
-    <div class="form-group col-md-6">
-      <label for="inputEmail4">Email</label>
-      <input type="email" class="form-control" id="inputEmail4">
-    </div>
-    <div class="form-group col-md-6">
-      <label for="inputPassword4">Password</label>
-      <input type="password" class="form-control" id="inputPassword4">
-    </div>
-  </div>
-  <div class="form-group">
-    <label for="inputAddress">Address</label>
-    <input type="text" class="form-control" id="inputAddress" placeholder="1234 Main St">
-  </div>
-  <div class="form-group">
-    <label for="inputAddress2">Address 2</label>
-    <input type="text" class="form-control" id="inputAddress2" placeholder="Apartment, studio, or floor">
-  </div>
-  <div class="form-row">
-    <div class="form-group col-md-6">
-      <label for="inputCity">City</label>
-      <input type="text" class="form-control" id="inputCity">
-    </div>
-    <div class="form-group col-md-4">
-      <label for="inputState">State</label>
-      <select id="inputState" class="form-control">
-        <option selected>Choose...</option>
-        <option>...</option>
-      </select>
-    </div>
+
     <div class="form-group col-md-2">
-      <label for="inputZip">Zip</label>
-      <input type="text" class="form-control" id="inputZip">
+      <label for="inputCodigo">Código Unidad</label>
+      <input type="text" class="form-control" id="inputCodigo" placeholder="Unidad">
     </div>
-  </div>
-  <div class="form-group">
-    <div class="form-check">
-      <input class="form-check-input" type="checkbox" id="gridCheck">
-      <label class="form-check-label" for="gridCheck">
-        Check me out
-      </label>
+
+    <div class="form-group col-md-2">
+      <label for="inputCedula">Cédula</label>
+      <input type="text" class="form-control" id="inputCedula" placeholder="Cédula">
     </div>
-  </div>
-  <button type="submit" class="btn btn-primary">Sign in</button>
+
+     <div class="form-group">
+      <label for="inputNombres">Nombres</label>
+      <input type="text" class="form-control" id="inputNombres" placeholder="Nombres">
+    </div>
+    
+      <div class="form-group col-md-4">
+        <label for="inputApellidos">Apellidos</label>
+        <input type="text" class="form-control" id="inputApellidos" placeholder="Apellidos">
+      </div>
+
+      <div class="form-group col-md-1">
+        <label for="inputEdad">Edad</label>
+        <input type="text" class="form-control" id="inputEdad" placeholder="Edad">
+      </div>
+
+      <div class="form-group col-md-4" placeholder="Fecha Nacimiento">
+        <label for="inputFechaN">Fecha de Nacimiento</label>
+        <select id="inputFechaN" class="form-control">
+          <option selected>Seleccione...</option>
+          <option>...</option>
+        </select>
+      </div>
+
+
+      <div class="form-group col-md-4" placeholder="Fecha Nacimiento">
+        <label for="inputFechaN">Género</label>
+        <select id="inputFechaN" class="form-control">
+          <option selected>Seleccione...</option>
+          <option>...</option>
+        </select>
+      </div>
+
+  </div> 
+
+   
+ 
 </form>
-
-
-
-
 
       </div>
     </div>
