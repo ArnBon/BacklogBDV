@@ -15,7 +15,17 @@ class CreateBlPersonasDireccionesTable extends Migration
     {
         Schema::create('bl_personas_direcciones', function (Blueprint $table) {
             $table->id();
+            $table->unsignedBigInteger('persona_id');
+            $table->unsignedBigInteger('direccion_id');
             $table->timestamps();
+
+            $table->foreign('persona_id')->references('id')->on('bl_personas')
+            ->onUpdate('cascade')
+            ->onDelete('cascade');
+
+            $table->foreign('direccion_id')->references('id')->on('bl_direcciones')
+            ->onUpdate('cascade')
+            ->onDelete('cascade');
         });
     }
 
