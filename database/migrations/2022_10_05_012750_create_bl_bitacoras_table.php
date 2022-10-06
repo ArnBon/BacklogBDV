@@ -15,7 +15,29 @@ class CreateBlBitacorasTable extends Migration
     {
         Schema::create('bl_bitacoras', function (Blueprint $table) {
             $table->id();
+            $table->unsignedBigInteger('solicitud_id');
+            $table->unsignedBigInteger('empleado_id');
+            $table->string('aplicativo');
+            $table->enum('normativo',['Seleccione...','Si','No'])->default('Seleccione...');
+            $table->enum('prioridad',['Seleccione...','B', 'M', 'A'])->default('Seleccione...');
+            $table->string('detalle_corto');
+            $table->string('detalle_seguimiento');
+            $table->string('esp_responsable');
+            $table->string('porc_avance');
+            $table->string('observaciones');
+            $table->date('fec_inicio');
+            $table->date('fec_cierre');
+            $table->date('fec_suspension');
+            $table->date('fec_fincalidad');
+            $table->date('fec_finproduccion');
+            $table->string('num_ctrol_com_calidad');
+            $table->string('num_ctrol_com_produccion');
+            $table->enum('estado',['Seleccione...','A','C','EC','ED','EP','PI','S'])->default('Seleccione...');           
             $table->timestamps();
+
+            $table->foreign('empleado_id')->references('id')->on('bl_empleados')
+            ->onUpdate('cascade')
+            ->onDelete('cascade');
         });
     }
 

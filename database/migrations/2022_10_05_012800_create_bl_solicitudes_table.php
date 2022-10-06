@@ -15,7 +15,17 @@ class CreateBlSolicitudesTable extends Migration
     {
         Schema::create('bl_solicitudes', function (Blueprint $table) {
             $table->id();
+             $table->unsignedBigInteger('bitacora_id');
+            $table->string('tipo_solicitud');
+            $table->string('cod_solicitud');
+            $table->string('solicitante');
+            $table->string('area_solicitante');
+            $table->date('fec_solicitud');
             $table->timestamps();
+
+            $table->foreign('bitacora_id')->references('id')->on('bl_bitacoras')
+            ->onUpdate('cascade')
+            ->onDelete('cascade');
         });
     }
 

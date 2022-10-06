@@ -15,6 +15,7 @@ class CreateBlMunicipiosTable extends Migration
     {
         Schema::create('bl_municipios', function (Blueprint $table) {
             $table->id();
+            $table->string('descripcion');
             $table->timestamps();
         });
     }

@@ -15,6 +15,11 @@ class CreateBlFamiliaresTable extends Migration
     {
         Schema::create('bl_familiares', function (Blueprint $table) {
             $table->id();
+            $table->string('parentesco');
+            $table->string('grupo_sanguineo');
+            $table->string('discapacidad');
+            $table->string('patologia');
+            $table->string('medicamento_especial');
             $table->timestamps();
         });
     }

@@ -15,7 +15,17 @@ class CreateBlPersonasTable extends Migration
     {
         Schema::create('bl_personas', function (Blueprint $table) {
             $table->id();
+            $table->unsignedBigInteger('genero_id');
+            $table->string('cedula');
+            $table->string('nombres');
+            $table->string('apellidos');
+            $table->date('fec_nac');
+            $table->integer('edad');
             $table->timestamps();
+
+            $table->foreign('genero_id')->references('id')->on('bl_generos')
+            ->onUpdate('cascade')
+            ->onDelete('cascade');
         });
     }
 

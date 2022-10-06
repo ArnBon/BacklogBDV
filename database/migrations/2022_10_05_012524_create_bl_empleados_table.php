@@ -15,7 +15,30 @@ class CreateBlEmpleadosTable extends Migration
     {
         Schema::create('bl_empleados', function (Blueprint $table) {
             $table->id();
+            $table->unsignedBigInteger('cargo_id');
+            $table->unsignedBigInteger('ubicacion_id');
+            $table->unsignedBigInteger('persona_id');
+            $table->string('nm_ct');
+            $table->date('fec_ing');
+            $table->date('fec_ing_dpto');
+            $table->string('ant_dpto');
+            $table->string('ant_bco');
+            $table->string('email');
+            $table->string('email_alterno');
+            $table->enum('personal_critico', ['Seleccione...','Si','No'])->default('Seleccione...');            
             $table->timestamps();
+
+            $table->foreign('cargo_id')->references('id')->on('bl_cargos')
+            ->onUpdate('cascade')
+            ->onDelete('cascade');
+
+            $table->foreign('persona_id')->references('id')->on('bl_personas')
+            ->onUpdate('cascade')
+            ->onDelete('cascade');
+
+            $table->foreign('ubicacion_id')->references('id')->on('bl_ubicaciones')
+            ->onUpdate('cascade')
+            ->onDelete('cascade');
         });
     }
 
