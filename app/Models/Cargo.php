@@ -7,5 +7,10 @@ use Illuminate\Database\Eloquent\Model;
 
 class Cargo extends Model
 {
-    use HasFactory;
+    //use HasFactory;
+
+    public function empleado()
+    {
+        return $this->belongsTo(Cargo::class);
+    }
 }

@@ -7,5 +7,10 @@ use Illuminate\Database\Eloquent\Model;
 
 class Genero extends Model
 {
-    use HasFactory;
+    //use HasFactory;
+
+    public function persona()
+    {
+        return $this->belongsTo(Persona::class);
+    }
 }
