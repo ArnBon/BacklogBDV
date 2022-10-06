@@ -7,5 +7,9 @@ use Illuminate\Database\Eloquent\Model;
 
 class Familiar extends Model
 {
-    use HasFactory;
+    // use HasFactory;
+    public function empleados()
+    {
+        return $this->belongsToMany(Empleado::class);
+    }
 }

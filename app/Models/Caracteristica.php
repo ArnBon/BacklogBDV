@@ -7,5 +7,9 @@ use Illuminate\Database\Eloquent\Model;
 
 class Caracteristica extends Model
 {
-    use HasFactory;
+    // use HasFactory;
+    public function equipos()
+    {
+        return $this->hasMany(Equipo::class);
+    }
 }

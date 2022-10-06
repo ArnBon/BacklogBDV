@@ -23,4 +23,19 @@ class Empleado extends Model
     {
         return $this->hasOne(Persona::class);
     }
+
+    public function equipos()
+    {
+        return $this->hasMany(Equipo::class);
+    } 
+
+    public function familiares()
+    {
+        return $this->belongsToMany(Familiar::class);
+    }
+
+    public function vehiculos()
+    {
+        return $this->hasMany(Vehiculo::class);
+    }
 }

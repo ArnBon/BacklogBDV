@@ -18,4 +18,16 @@ class Persona extends Model
     {
         return $this->hasMany(Genero::class);
     }
+
+    public function telefonos()
+    {
+        return $this->belongsToMany(Telefono::class);
+    }
+
+    public function direcciones()
+    {
+        return $this->belongsToMany(Direccion::class);
+    }
+
+
 }

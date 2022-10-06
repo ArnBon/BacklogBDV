@@ -5,13 +5,11 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Vehiculo extends Model
+class Estado extends Model
 {
-    // use HasFactory;
-
-    public function empleado()
+    //use HasFactory;
+    public function direccion()
     {
-       return $this->hasMany(Empleado::class); 
+        return $this->belongsTo(Estado::class);
     }
-
 }

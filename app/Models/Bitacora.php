@@ -7,5 +7,14 @@ use Illuminate\Database\Eloquent\Model;
 
 class Bitacora extends Model
 {
-    use HasFactory;
+    // use HasFactory;
+    public function solicitud()
+    {
+        return $this->hasMany(Solicitud::class);
+    }
+
+    public function libras()
+    {
+        return $this->belongsToMany(Libra::class);
+    }
 }

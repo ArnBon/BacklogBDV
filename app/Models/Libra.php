@@ -7,5 +7,10 @@ use Illuminate\Database\Eloquent\Model;
 
 class Libra extends Model
 {
-    use HasFactory;
+    // use HasFactory;
+
+    public function bitacoras()
+    {
+        return $this->belongsToMany(Bitacora::class);
+    }
 }

@@ -7,5 +7,9 @@ use Illuminate\Database\Eloquent\Model;
 
 class Solicitud extends Model
 {
-    use HasFactory;
+    // use HasFactory;
+    public function bitacoras()
+    {
+        return $this->hasMany(Bitacora::class);
+    }
 }

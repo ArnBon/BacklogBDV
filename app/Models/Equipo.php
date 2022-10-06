@@ -7,5 +7,14 @@ use Illuminate\Database\Eloquent\Model;
 
 class Equipo extends Model
 {
-    use HasFactory;
+    // use HasFactory;
+    public function empleado()
+    {
+        return $this->hasMany(Empleado::class);
+    }
+
+    public function caracteristica()
+    {
+        return $this->hasMany(Caracteristica::class);
+    }
 }

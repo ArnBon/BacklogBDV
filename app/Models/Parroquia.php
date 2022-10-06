@@ -7,5 +7,10 @@ use Illuminate\Database\Eloquent\Model;
 
 class Parroquia extends Model
 {
-    use HasFactory;
+    // use HasFactory;
+
+    public function direccion()
+    {
+        return $this->belongsTo(Parroquia::class);
+    }
 }
